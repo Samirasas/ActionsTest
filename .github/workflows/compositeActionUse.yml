@@ -15,7 +15,9 @@ jobs:
 
       # Uses the Composite Action
       - name: Build and Push the image
-        uses: samirasas/CompositeAction@main
+        uses: n3wt0n/CompositeAction@main
         with:
+          registry_username: ${{secrets.REGISTRY_USERNAME}}
+          registry_password: ${{secrets.REGISTRY_PASSWORD}}
           image_name: my-awesome-app
           tag: $GITHUB_RUN_NUMBER
